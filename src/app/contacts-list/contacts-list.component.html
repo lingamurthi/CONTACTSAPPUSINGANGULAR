@@ -1,0 +1,68 @@
+<mat-toolbar color="primary">Contacts</mat-toolbar> 
+
+<div>
+  <h1>CREATE YOUR FORM BY CLICKING BELOW BUTTON</h1>
+  <a routerLink="/contact/new" mat-fab title="Add a new contact" class="trm-floating-button">
+    <mat-icon class="md-24">add</mat-icon>
+  </a>
+</div>
+
+
+
+<div>
+  <input type="text" (input)="sear($event)">
+  <button color="accent">search</button>
+</div>
+ 
+  <ul *ngFor="let c of contacts |async">
+    <li >
+     <a href="contacts/{{c.id}}">{{c.id}}</a>
+    </li>
+    <li>
+      {{c.name}}
+    </li>
+    <li>
+      {{c.email}}
+    </li>
+    <li>
+      {{c.phone}}
+    </li>
+    <li>
+      {{c.birthday}}
+    </li>
+    <li>
+      {{c.website}}
+    </li>
+    <li>
+       <img src="{{c.image}}" alt="aaa" width="50" height="50">
+    </li>
+    <li>
+      {{c.address.street}}
+    </li>
+    <li>
+      {{c.address.zip}}
+    </li>
+    <li>
+      {{c.address.city}}
+    </li>
+    <li>
+      {{c.address.country}}
+    </li>
+   </ul>
+ 
+<ul *ngFor="let c of contacts |async">
+  <li>
+    <a href="contact/{{c.id}}/edit" class="btn btn-primary">update the {{c.id}}</a>
+  </li>
+</ul>
+
+
+
+<ul *ngFor="let c of contacts |async">
+  <li>
+    <a href="contact/{{c.id}}/delete" class="btn btn-primary">delete the {{c.id}}</a>
+  </li>
+</ul>
+
+ 
+

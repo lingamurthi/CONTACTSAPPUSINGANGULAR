@@ -1,0 +1,178 @@
+<h1>CREATE YOUR CONTACT FORM</h1>
+  
+
+
+
+<form class="ml-4" [formGroup]="userForm" (ngSubmit)="saveData()">
+  <div class="row">
+    <div class="col-md-4">
+
+      <div class="form-group">
+        <label for="id">Id</label>
+        <input
+          type="text"
+          class="form-control"
+          id="id"
+          name="id"
+          formControlName="id"
+        />
+      </div>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+        [class.is-invalid]="userName?.invalid && userName?.touched"
+          type="text"
+          class="form-control"
+          id="name"
+          name="name"
+          formControlName="name"
+          required
+          [minlength]="3"
+        />
+
+
+        
+        <div *ngIf="userName?.invalid && userName?.touched">
+          <small *ngIf="userName?.errors?.['required']" class="text-danger">name is required</small>
+          <small *ngIf="userName?.errors?.['minlength']" class="text-danger">name must be atleast 3 characters</small>
+       </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+        [class.is-invalid]="userEmail?.invalid && userEmail?.touched"
+          type="text"
+          class="form-control"
+          id="email"
+          name="email"
+          formControlName="email"
+          required
+        
+        />
+
+
+        
+        <div *ngIf="userEmail?.invalid && userEmail?.touched">
+          <small *ngIf="userEmail?.errors?.['required']" class="text-danger">email is required</small>
+          <small *ngIf="userEmail?.errors?.['pattern']" class="text-danger">Email must be a valid email address</small>
+       </div>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input
+          type="text"
+          class="form-control"
+          id="phone"
+          name="phone"
+          formControlName="phone"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="birthday">Birthday</label>
+        <input
+          type="text"
+          class="form-control"
+          id="birthday"
+          name="birthday"
+          formControlName="birthday"
+        />
+      </div>
+
+
+      <div class="form-group">
+        <label for="website">Website</label>
+        <input
+          type="text"
+          class="form-control"
+          id="website"
+          name="website"
+          formControlName="website"
+        />
+      </div>
+
+
+
+      <div class="form-group">
+        <label for="image">Image</label>
+        <input
+          type="text"
+          class="form-control"
+          id="image"
+          name="image"
+          formControlName="image"
+        />
+      </div>
+
+
+
+      <div formGroupName="address">
+        <div class="form-group">
+          <label for="street">Street</label>
+          <input
+            type="text"
+            class="form-control"
+            id="street"
+            name="street"
+            formControlName="street"
+          />
+        </div>
+  
+        
+        <div class="form-group">
+          <label for="zip">Zip</label>
+          <input
+            type="text"
+            class="form-control"
+            id="zip"
+            name="zip"
+            formControlName="zip"
+          />
+        </div>
+  
+  
+        
+        <div class="form-group">
+          <label for="city">City</label>
+          <input
+            type="text"
+            class="form-control"
+            id="city"
+            name="city"
+            formControlName="city"
+          />
+        </div>
+  
+        
+        <div class="form-group">
+          <label for="country">Country</label>
+          <input
+            type="text"
+            class="form-control"
+            id="country"
+            name="country"
+            formControlName="country"
+          />
+        </div>
+      </div>
+
+     
+      <div class="form-group row">
+        <div class="col-sm-10">
+          <input type="submit" class="btn btn-primary" value="Register"/>
+        </div>
+      </div>
+
+      
+    </div>
+  </div>
+</form>
+
+<div>
+  <h1 *ngIf="displaymessage">{{displaymessage}}</h1>
+</div>
+  <a href='' class="btn btn-primary" >Go Back</a>
+  
+

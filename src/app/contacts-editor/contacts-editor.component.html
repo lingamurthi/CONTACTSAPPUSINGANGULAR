@@ -1,0 +1,146 @@
+<h1>Update Your Registration Form</h1>
+<br />
+<form class="ml-4" #userRegForm="ngForm" (ngSubmit)="save(userRegForm)">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="name">Id</label>
+        <input
+          type="number"
+          class="form-control"
+          id="name"
+          name="id"
+          [(ngModel)]="con.id"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="text">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="email"
+          name="name"
+          [(ngModel)]="con.name"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="text">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          [(ngModel)]="con.email"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="text">Phone</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="phone"
+          [(ngModel)]="con.phone"
+        />
+      </div>
+
+      
+      <div class="form-group">
+        <label for="text">Birthday</label>
+        <input
+          type="text"
+          class="form-control"
+          id="email"
+          name="birthday"
+          [(ngModel)]="con.birthday"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="text">website</label>
+        <input
+          type="text"
+          class="form-control"
+          id="email"
+          name="website"
+          [(ngModel)]="con.website"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="text">image</label>
+        <input
+          type="text"
+          class="form-control"
+          id="email"
+          name="image"
+          [(ngModel)]="con.image"
+        />
+      </div>
+
+
+      <div ngModelGroup="address">
+        <div class="form-group">
+          <label for="text">street</label>
+          <input
+            type="text"
+            class="form-control"
+            id="email"
+            name="street"
+            [(ngModel)]="con.address.street"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="text">zip</label>
+          <input
+            type="text"
+            class="form-control"
+            id="email"
+            name="zip"
+            [(ngModel)]="con.address.zip"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="text">city</label>
+          <input
+            type="text"
+            class="form-control"
+            id="email"
+            name="city"
+            [(ngModel)]="con.address.city"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="text">country</label>
+          <input
+            type="text"
+            class="form-control"
+            id="email"
+            name="country"
+            [(ngModel)]="con.address.country"
+          />
+        </div>
+      </div>
+        <div class="form-group row">
+          <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary">UPDATE</button>
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+  
+</form>
+
+
+
+<h1 *ngIf="displaymessage">{{displaymessage}}</h1>
+    
+<a href='contacts/{{con.id}}' class="btn btn-primary">CANCEL</a> 

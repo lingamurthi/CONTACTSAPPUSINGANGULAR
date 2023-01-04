@@ -1,0 +1,17 @@
+[
+    {
+     "id": 6,
+     "name": "AAAAAAAA",
+     "email": "a@gmail.com",
+     "phone": "55555555",
+     "birthday": "07-01-1998",
+     "website": "www.google.com",
+     "image": "assets/images/aa.jpg",
+     "address": {
+       "street": "6554 park lane",
+       "zip": "43378",
+       "city": "Rush",
+       "country": "United States"
+     }
+   }
+]
